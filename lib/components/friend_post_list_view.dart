@@ -21,23 +21,19 @@ class FriendPostListView extends StatelessWidget {
           Text('Social Chefs ! ',
               style: Theme.of(context).textTheme.headline1),
           const SizedBox(height: 16),
-          // 1
           ListView.separated(
-            // 2
+            //указывает, что не основной вид прокрутки
             primary: false,
-            // 3
             physics: const NeverScrollableScrollPhysics(),
-            // 4
+            // прокурчиваемый список фиксированной длинны
             shrinkWrap: true,
             scrollDirection: Axis.vertical,
             itemCount: friendPosts.length,
             itemBuilder: (context, index) {
-              // 5
               final post = friendPosts[index];
               return FriendPostTile(post: post);
             },
             separatorBuilder: (context, index) {
-              // 6
               return const SizedBox(height: 16);
             },
           ),
